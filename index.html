@@ -23,19 +23,37 @@
 
     <!-- Header -->
     <div>
-        <header class="bg-white text-gray-900 relative flex items-center justify-center px-4 md:px-10 py-3"
+        <header class="bg-white text-gray-900 relative flex items-center justify-between px-4 md:px-10 py-8"
             data-aos="fade-down">
-            <!-- Hamburger Icon using Image -->
-            <button id="menu-toggle" class="absolute left-4 top-1/2 -translate-y-1/2 focus:outline-none"
-                aria-label="Open Menu">
-                <img src="https://cdn-icons-png.flaticon.com/128/6995/6995971.png" alt="menu" class="w-10 h-10"
-                    loading="lazy" />
-            </button>
 
-            <!-- Centered Logo -->
-            <div class="text-2xl font-bold text-[#133235] flex items-center gap-2">
-                <img src="assets/padm_logo.png" alt="Logo" class="h-16 md:h-24" />
+            <!-- LEFT SIDE -->
+            <div class="flex items-center">
+                <button id="menu-toggle" class="focus:outline-none" aria-label="Open Menu">
+                    <img src="https://cdn-icons-png.flaticon.com/128/6995/6995971.png" alt="menu"
+                        class="w-8 h-8 md:w-10 md:h-10" loading="lazy" />
+                </button>
             </div>
+
+            <!-- CENTER LOGO -->
+            <div class="absolute left-1/2 transform -translate-x-1/2">
+                <img src="assets/padm_logo.png" alt="Logo" class="h-14 md:h-20" />
+            </div>
+
+            <!-- RIGHT SIDE ICONS -->
+            <div class="flex items-center gap-4">
+
+                <!-- Notification Icon -->
+                <button class="relative" onclick="navigateToNotification()">
+                    <img src="assets/notification.png" alt="notification" class="w-7 h-7 md:w-8 md:h-8" />
+                </button>
+
+                <!-- Logout Icon -->
+                <button onclick="navigateToLogout()">
+                    <img src="assets/logout.png" alt="logout" class="w-7 h-7 md:w-8 md:h-8" />
+                </button>
+
+            </div>
+
         </header>
 
         <!-- Drawer -->
@@ -64,10 +82,11 @@
                 <a href="#" onclick="navigateToMyOrder()">Order</a>
                 <a href="#" onclick="navigateToUserProfile()">Profile</a>
                 <a href="#" onclick="navigateToDigitalGold()">Gold</a>
-                <a href="#" onclick="navigateToPanchang()">Panchang</a>
+                <!-- <a href="#" onclick="navigateToPanchang()">Panchang</a> -->
                 <a href="#" onclick="navigateToCatalogues()">Catalogues</a>
                 <a href="#" onclick="navigateToQuickPurchase()">Quick Purchase</a>
                 <a href="#" onclick="navigateToSetting()">Settings</a>
+                <a href="#" onclick="navigateToLogout()">Logout</a>
             </nav>
         </div>
 
@@ -124,10 +143,11 @@
 
 
     <!-- services  -->
-    <div class="flex flex-col items-center justify-center pt-6 px-6 md:py-10 font-['Roboto']">
+    <div class="flex flex-col items-center justify-center pt-6 px-4 md:px-4 lg:px-72 md:py-10 font-['Roboto']">
         <!-- Grid Container -->
-        <div id="boxContainer"
-            class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-7 gap-3 md:gap-3 lg:gap-6 overflow-hidden transition-all duration-500 max-h-[15.5rem] sm:max-h-none">
+        <div id="boxContainer" class="flex flex-wrap justify-center gap-6 
+           overflow-hidden transition-all duration-500 
+           max-h-[15.5rem] sm:max-h-none">
             <!-- Box 1 -->
             <div onclick="navigateToScheme()"
                 class="h-28 w-24 md:w-28 md:h-28 rounded-tr-[50px] rounded-bl-[50px] flex flex-col items-center justify-center text-center shadow-md text-white cursor-pointer border-4 border-[#d4af37]"
@@ -291,7 +311,7 @@
 
             <!-- Box 11 -->
 
-            <div onclick="navigateToPanchang()"
+            <!-- <div onclick="navigateToPanchang()"
                 class="h-28 w-24 md:w-28 md:h-28 rounded-tr-[50px] rounded-bl-[50px] flex flex-col items-center justify-center text-center shadow-md text-white cursor-pointer border-4 border-[#d4af37]"
                 data-aos="zoom-in" data-aos-delay="100" style="
             background: linear-gradient(
@@ -304,7 +324,7 @@
           ">
                 <img class="w-10 h-10 invert" src="https://cdn-icons-png.flaticon.com/128/3013/3013143.png" />
                 <span class="text-sm text-white font-semibold mt-2">Panchang</span>
-            </div>
+            </div> -->
 
 
             <div onclick="navigateToCatalogues()"

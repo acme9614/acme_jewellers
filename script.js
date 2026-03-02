@@ -88,71 +88,79 @@ function navigateToHomePage() {
   Toaster.postMessage("navigateToHomePage");
 }
 
+function navigateToNotification() {
+  Toaster.postMessage("navigateToNotification");
+}
 
-     AOS.init({
-      duration: 600,
-      once: false
-    });
+function navigateToLogout() {
+  Toaster.postMessage("navigateToLogout");
+}
+
+
+AOS.init({
+  duration: 600,
+  once: false
+});
 
 
 // brandingSwiper 
 const swiper = new Swiper(".brandingSwiper", {
-        effect: "coverflow",
-        spaceBetween: 30,
-        centeredSlides: true,
-        loop: true,
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false,
-        },
-        coverflowEffect: {
-          rotate: 30,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        on: {
-          autoplayTimeLeft(s, time, progress) {
-            const circle = document.querySelector(".autoplay-progress svg");
-            const content = document.querySelector(".autoplay-progress span");
-            circle.style.setProperty("--progress", 1 - progress);
-            content.textContent = `${Math.ceil(time / 1000)}s`;
-          },
-        },
-      });
+  effect: "coverflow",
+  spaceBetween: 30,
+  centeredSlides: true,
+  loop: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  coverflowEffect: {
+    rotate: 30,
+    stretch: 0,
+    depth: 100,
+    modifier: 1,
+    slideShadows: true,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  on: {
+    autoplayTimeLeft(s, time, progress) {
+      const circle = document.querySelector(".autoplay-progress svg");
+      const content = document.querySelector(".autoplay-progress span");
+      circle.style.setProperty("--progress", 1 - progress);
+      content.textContent = `${Math.ceil(time / 1000)}s`;
+    },
+  },
+});
 
 
 
-       // services
+// services
 
-      AOS.init({
-        duration: 800,
-        once: false,
-        disable: false, // 👈 Add this line
-      });
+AOS.init({
+  duration: 800,
+  once: false,
+  disable: false, // 👈 Add this line
+});
 
-      let expanded = false;
-      function toggleBoxes() {
-        const container = document.getElementById("boxContainer");
-        const arrow = document.getElementById("arrowIcon");
+let expanded = false;
+function toggleBoxes() {
+  const container = document.getElementById("boxContainer");
+  const arrow = document.getElementById("arrowIcon");
 
-        if (!expanded) {
-          container.classList.remove("max-h-[15.5rem]");
-          arrow.classList.add("rotate-180");
-          expanded = true;
-        } else {
-          container.classList.add("max-h-[15.5rem]");
-          arrow.classList.remove("rotate-180");
-          expanded = false;
-        }
-      }
+  if (!expanded) {
+    container.classList.remove("max-h-[15.5rem]");
+    arrow.classList.add("rotate-180");
+    expanded = true;
+  } else {
+    container.classList.add("max-h-[15.5rem]");
+    arrow.classList.remove("rotate-180");
+    expanded = false;
+  }
+}
 
